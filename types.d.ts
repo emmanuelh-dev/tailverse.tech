@@ -24,7 +24,7 @@ interface SelectDropdownProps {
   setTitle: any;
   options: Options[];
 }
-interface Component {
+export interface Component {
   source: string;
   id: number;
   author: string;

@@ -8,7 +8,7 @@ import {
 import React from "react";
 import Avatar from "react-avatar";
 
-const UserCard = ({ user }) => {
+const UserCard = ({ user }: any) => {
   const { username, email } = user;
 
   return (

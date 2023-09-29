@@ -9,7 +9,7 @@ const Searchbox = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const filterComponents = UserStore((state) => state.filterComponents);
 
-  const handleonKeyDown = (e) => {
+  const handleonKeyDown = (e: any) => {
     if (e.key === "Enter") {
       filterComponents(searchTerm);
     }

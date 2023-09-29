@@ -2,24 +2,24 @@ import { create } from "zustand";
 
 interface NewComponent {
   name?: "Input user id 3 RGB mamalon" | string;
-  author: string | undefined;
+  author: string;
   source: string;
-  type: string | undefined;
-  rate: number | undefined;
+  type: string;
+  rate: number;
 }
 
 interface UserState {
   user: string;
   token: string | null;
   newComponent: NewComponent;
-  filteredComponents:[],
-  components: NewComponent[]; // Corrected array type
-  setInitialData: (user: string | null, token: string | null) => void;
+  filteredComponents: NewComponent[];
+  components: NewComponent[];
+  setInitialData: (user: string, token: string) => void;
   selectNewComponentType: (type: string) => void;
   setComponentSource: (source: string) => void;
   logOut: () => void;
   setComponents: (components: NewComponent[]) => void;
-  filterComponents: any;
+  filterComponents: (searchTerm: string) => void;
 }
 
 const UserStore = create<UserState>((set, get) => ({
@@ -54,7 +54,7 @@ const UserStore = create<UserState>((set, get) => ({
     }));
   },
   logOut: () => {
-    set({ user: null, token: null });
+    set({ user: "", token: "" });
   },
   setComponents: (components: NewComponent[]) => {
     set({ components, filteredComponents: components });

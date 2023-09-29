@@ -5,9 +5,8 @@ import PlayGround from "@/components/PlayGround/Playground";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import Script from "next/script";
 
-const View = ({ component }) => {
+const View = ({ component }: any) => {
   const { id, name, author, source, type } = component[0];
   return (
     <div className="px-8">

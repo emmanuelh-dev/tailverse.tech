@@ -69,16 +69,6 @@ const CardComponent = ({ component }: Props) => {
   const { source, author, type, rate, id } = component;
   const newSource = ValidationCard(source);
 
-  let classNamesArray = []; // Declara classNamesArray aquí
-
-  const classNames = source.match(/class="([^"]*)"/g);
-  if (classNames) {
-    classNamesArray = classNames.map((match) => {
-      
-      return match.match(/class="([^"]*)"/)[1];
-    });
-  }
-
   return (
     <CardActions
       source={source}
