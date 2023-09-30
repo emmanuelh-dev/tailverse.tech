@@ -1,3 +1,4 @@
+import { SelectDropdownProps } from "@/types";
 import React, { useState, useEffect } from "react";
 
 const SelectDropdown: React.FC<SelectDropdownProps> = ({
