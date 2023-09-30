@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className=" overflow-hidden">
+      <body>
         <ReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
             <Header />
