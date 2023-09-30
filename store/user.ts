@@ -1,24 +1,17 @@
 import { create } from "zustand";
-
-interface NewComponent {
-  name?: "Input user id 3 RGB mamalon" | string;
-  author: string;
-  source: string;
-  type: string;
-  rate: number;
-}
+import { NewComponent, Components } from "@/types";
 
 interface UserState {
   user: string;
   token: string | null;
   newComponent: NewComponent;
-  filteredComponents: NewComponent[];
-  components: NewComponent[];
+  filteredComponents: Components[];
+  components: Components[];
   setInitialData: (user: string, token: string) => void;
   selectNewComponentType: (type: string) => void;
   setComponentSource: (source: string) => void;
   logOut: () => void;
-  setComponents: (components: NewComponent[]) => void;
+  setComponents: (components: Components[]) => void;
   filterComponents: (searchTerm: string) => void;
 }
 
@@ -56,7 +49,7 @@ const UserStore = create<UserState>((set, get) => ({
   logOut: () => {
     set({ user: "", token: "" });
   },
-  setComponents: (components: NewComponent[]) => {
+  setComponents: (components: Components[]) => {
     set({ components, filteredComponents: components });
   },
   filterComponents: (searchTerm: string) => {
@@ -65,7 +58,6 @@ const UserStore = create<UserState>((set, get) => ({
       // For example, you can filter based on the component's name, author, or type.
       if (!searchTerm) return UserStore.getState().components
       return (
-        component.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         component.author?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         component.type?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         component.source?.toLowerCase().includes(searchTerm.toLowerCase())
@@ -75,7 +67,6 @@ const UserStore = create<UserState>((set, get) => ({
 
     // Set the filtered components in the state
     set({ filteredComponents: filtered });
-    
   },
 }));
 async function fetchAndInitializeComponents() {

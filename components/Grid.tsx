@@ -2,23 +2,15 @@
 import React, { Suspense, useEffect, useState } from "react";
 import CardComponent from "@/components/Card";
 import SuspenceCard from "@/components/Cards/Suspence";
+import { Components } from "@/types";
 
-interface Components {
-  source: string;
-  author: string;
-  type: string;
-  rate: number;
-  id: number;
-}
 
 const RenderedGrid = ({ components }: { components: Components[] }) => {
   return (
     <>
       {components.length > 2 ? (
-        components.map((component: Components) => (
-          <Suspense key={component.id}>
-            <CardComponent component={component} />
-          </Suspense>
+        components.map((component: Components, index) => (
+            <CardComponent component={component} key={index}/>
         ))
       ) : (
         <div>Try with another prompt</div>

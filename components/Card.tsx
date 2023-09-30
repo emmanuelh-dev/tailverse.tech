@@ -6,16 +6,9 @@ import LikeButton from "./Cards/LikeButton";
 import DeleteButton from "./Cards/DeleteButton";
 import CopyButton from "./tools/CopyButton";
 import { ValidationCard } from "@/utils/validations";
-interface CardComponent {
-  source: string;
-  author: string;
-  type: string;
-  rate: number;
-  id: number;
-  children?: React.ReactNode;
-}
+import { Components } from "@/types";
 interface Props {
-  component: CardComponent;
+  component: Components;
 }
 
 const CardActions = ({
@@ -25,7 +18,7 @@ const CardActions = ({
   source,
   type,
   children,
-}: CardComponent) => {
+}: Components) => {
   return (
     <div className="flex w-full flex-col min-h-[18rem] justify-center items-center  overflow-y-auto ">
       <div className="w-full justify-between flex py-1">

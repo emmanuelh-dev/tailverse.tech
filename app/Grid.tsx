@@ -3,14 +3,8 @@ import React, { Suspense, useEffect, useState } from "react";
 import CardComponent from "@/components/Card";
 import SuspenceCard from "@/components/Cards/Suspence";
 import UserStore from "@/store/user";
+import { Components } from "@/types";
 
-interface Components {
-  source: string;
-  author: string;
-  type: string;
-  rate: number;
-  id: number;
-}
 const RenderedGrid = ({ components }: { components: Components[] }) => {
   return (
     <>

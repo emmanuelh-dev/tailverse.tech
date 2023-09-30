@@ -26,10 +26,16 @@ interface SelectDropdownProps {
 }
 export interface Component {
   source: string;
-  id: number;
   author: string;
   type: string;
   rate: number;
+  children?: React.ReactNode;
+}
+export interface Components extends Component {
+  id: number;
+ }
+export interface NewComponent extends Component {
+  name: string;
 }
 
 type User = {
@@ -44,13 +50,6 @@ type Props = {
   users: User[];
   components: Component[];
 };
-
-interface Component {
-  source: string;
-  id: number;
-  author: string;
-  type: string;
-}
 
 type Props = {
   components: Component[];

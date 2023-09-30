@@ -52,12 +52,8 @@ export async function deleteCompoent(id:number) {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-
-      toast.success("Component deleted"); // Make sure 'toast' is defined
-      window.location.reload();
     } catch (error) {
       console.error("Error:", error);
-      toast.error("Could not delete component"); // Make sure 'toast' is defined
     }
   }
 }
