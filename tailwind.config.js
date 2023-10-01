@@ -897,6 +897,7 @@ module.exports = {
     'to-rose-800',
     'to-rose-900',
   ],
+  mode: 'jit',
   theme: {
     container: {
       center: true,

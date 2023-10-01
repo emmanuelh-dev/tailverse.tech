@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/Theme/ThemeProvider";
 import { ModeToggle } from "@/components/Theme/Toggle";
 import Header from "@/components/Header/Header";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body>
         <ReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <Script src="https://cdn.tailwindcss.com"/>
             <Header />
             {children}
           </ThemeProvider>

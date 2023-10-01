@@ -32,7 +32,7 @@ const Header = () => {
         </div>
         <div className="gap-3 flex items-center">
           <Button variant={"outline"}><AiFillGithub className="text-xl"/></Button>
-        <ModeToggle />
+        {/* <ModeToggle /> */}
         <DropdownMenuDemo/>
         </div>
       </nav>
