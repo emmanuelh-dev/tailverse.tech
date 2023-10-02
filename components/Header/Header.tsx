@@ -7,6 +7,7 @@ import { Button } from "../ui/button";
 import { DropdownMenuDemo } from "./UserMenu";
 import MobileNav from "./MobileNav";
 import { NAVIGATION } from "@/data/navigation";
+import Searchbox from "@/app/Searchbox";
 const Header = () => {
   return (
     <header>
@@ -35,6 +36,7 @@ const Header = () => {
 
         <MobileNav />
         <div className="gap-3 md:flex items-center hidden">
+        <Searchbox />
           <Button variant={"outline"}>
             <AiFillGithub className="text-xl" />
           </Button>
