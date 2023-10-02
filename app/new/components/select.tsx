@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 
 import {
   Select,
@@ -8,7 +8,8 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
+import { TYPES } from "@/data/navigation";
 
 export function SelectType() {
   return (
@@ -19,12 +20,13 @@ export function SelectType() {
       <SelectContent>
         <SelectGroup>
           <SelectLabel>Components</SelectLabel>
-          <SelectItem value="card">Card</SelectItem>
-          <SelectItem value="butttons">Butttons</SelectItem>
-          <SelectItem value="inputs">Inputs</SelectItem>
-          <SelectItem value="forms">Forms</SelectItem>
+          {TYPES.map((type, index) => (
+            <SelectItem value={type.title.toLowerCase()} key={index}>
+              {type.title}
+            </SelectItem>
+          ))}
         </SelectGroup>
       </SelectContent>
     </Select>
-  )
+  );
 }
