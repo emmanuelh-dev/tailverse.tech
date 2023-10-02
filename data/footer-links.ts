@@ -1,4 +1,5 @@
-import navigation from "./navigation";
+import { NAVIGATION } from "./navigation";
+
 const footerLinks = [
   {
     title: "Stay updated",
@@ -9,7 +10,7 @@ const footerLinks = [
   },
   {
     title: "Site Map",
-    links: [...navigation],
+    links: [...NAVIGATION],
   },
   {
     title: "Our projects",

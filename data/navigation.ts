@@ -1,4 +1,4 @@
-const navigation = [
+export const NAVIGATION = [
   { href: 'buttons', title: 'Buttons' },
   { href: 'inputs', title: 'Inputs' },
   { href: 'cards', title: 'Cards' },
@@ -7,4 +7,3 @@ const navigation = [
   { href: 'tailwind-gradient-generator', title: 'Gradient Generator' },
 ]
 
-export default navigation
