@@ -2,6 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { NAVIGATION } from "@/data/navigation";
 import Searchbox from "@/app/Searchbox";
+import { DropdownMenuDemo } from "./UserMenu";
 
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false);
@@ -44,7 +45,8 @@ const MobileNav = () => {
           navShow ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex justify-end">
+        <div className="flex justify-end items-center">
+
           <button
             type="button"
             className="mr-10 mt-9 h-8 w-8 rounded"
@@ -67,8 +69,7 @@ const MobileNav = () => {
         </div>
         <nav className="fixed mt-8 h-full">
           <div className="px-12 py-4">
-
-          <Searchbox />
+            <Searchbox />
           </div>
 
           {NAVIGATION.map((link) => (

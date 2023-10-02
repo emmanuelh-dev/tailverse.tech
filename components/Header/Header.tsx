@@ -3,11 +3,12 @@ import React from "react";
 import { ModeToggle } from "../Theme/Toggle";
 import Link from "next/link";
 import { AiFillGithub } from "react-icons/ai";
-import { Button } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
 import { DropdownMenuDemo } from "./UserMenu";
 import MobileNav from "./MobileNav";
 import { NAVIGATION } from "@/data/navigation";
 import Searchbox from "@/app/Searchbox";
+import { Plus } from "lucide-react";
 const Header = () => {
   return (
     <header>
@@ -36,7 +37,8 @@ const Header = () => {
 
         <MobileNav />
         <div className="gap-3 md:flex items-center hidden">
-        <Searchbox />
+          <Link href="/new" className={`flex items-center gap-2 ${buttonVariants({variant: "default"})}`}>Create <Plus/></Link>
+          <Searchbox />
           <Button variant={"outline"}>
             <AiFillGithub className="text-xl" />
           </Button>
