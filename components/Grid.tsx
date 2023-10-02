@@ -19,7 +19,6 @@ const RenderedGrid = ({ components }: { components: Components[] }) => {
   );
 };
 const Grid = ({ components } : any) => {
-  console.log(components);
   const [showComponents, setShowComponents] = useState(false);
   useEffect(() => {
     setShowComponents(true);

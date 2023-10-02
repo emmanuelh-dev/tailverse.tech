@@ -27,7 +27,6 @@ export default async function Page({
 
   // Llama a la función asincrónica para obtener los componentes
   const components = await getComponentsByType();
-  console.log(components)
   return (
     <div>
       <Grid components={components} />

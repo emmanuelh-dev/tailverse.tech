@@ -79,7 +79,6 @@ async function fetchAndInitializeComponents() {
     // Set the components data in the UserStore
     UserStore.getState().setComponents(data);
   } catch (error) {
-    console.error('Error fetching data:', error);
   }
 }
 

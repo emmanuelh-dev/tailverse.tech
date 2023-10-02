@@ -35,7 +35,6 @@ export default async function Page({
   }
   const user = await getUserInfo();
   const components = await getComponentsUser();
-  console.log(user)
   return (
     <div>
       <UserHeader user={user}/>
