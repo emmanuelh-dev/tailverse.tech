@@ -11,14 +11,15 @@ import PlayGround from "@/components/PlayGround/Playground";
 
 
 const page = () => {
-  const user = UserStore(state => state.user)
+  const newComponent = UserStore(state => state.newComponent)
+  const {author} = newComponent
   return (
     <div className="px-8">
       <Card className="">
         <header className="flex w-full justify-between p-8 border-b border-neutral-200 dark:border-neutral-800">
           <h3 className="text-lg font-semibold">New Component</h3>
           <nav className="flex gap-2 items-center">
-            <Input value={user ? user : "Login to save your component"} disabled className="max-w-xs"/>
+            <Input value={author ? author : "Login to save your component"} disabled className="max-w-xs"/>
             <ComponentName />
             <SelectType />
             <Button variant={"secondary"}>Save</Button>

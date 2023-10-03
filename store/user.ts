@@ -9,19 +9,24 @@ interface UserState {
   components: Components[];
   setInitialData: (user: string, token: string) => void;
   selectNewComponentType: (type: string) => void;
-  setComponentSource: (source: string) => void;
   logOut: () => void;
   setComponents: (components: Components[]) => void;
   filterComponents: (searchTerm: string) => void;
+
+  updateSource: (source: string) => void;
+  updateAuthor: (author: string) => void;
+  updateType: (type: string) => void;
+  updateRate: (rate: number) => void;
+  updateName: (name: string) => void;
 }
 
 const UserStore = create<UserState>((set, get) => ({
   filteredComponents: [],
-  user:"",
+  user: "",
   token: null,
   components: [], // Corrected array initialization
   newComponent: {
-    name: "Input user id 3 RGB mamalon",
+    name: "",
     author: "",
     source: "<div>Hola mundo</div>",
     type: "",
@@ -38,13 +43,28 @@ const UserStore = create<UserState>((set, get) => ({
       },
     }));
   },
-  setComponentSource: (source: string) => {
+  updateSource: (source: string) => {
     set((state) => ({
       newComponent: {
         ...state.newComponent,
         source: source,
       },
     }));
+  },
+  updateAuthor: (author) =>
+    set((state) => ({ newComponent: { ...state.newComponent, author } })),
+  updateType: (type) => {
+
+    set((state) => ({
+      newComponent: { ...state.newComponent, type },
+    }));
+  },
+
+  updateRate: (rate) =>
+    set((state) => ({ newComponent: { ...state.newComponent, rate } })),
+  updateName: (name) => {
+    console.log(name);
+    set((state) => ({ newComponent: { ...state.newComponent, name } }));
   },
   logOut: () => {
     set({ user: "", token: "" });
@@ -56,12 +76,11 @@ const UserStore = create<UserState>((set, get) => ({
     const filtered = UserStore.getState().components.filter((component) => {
       // Include conditions for filtering based on your criteria.
       // For example, you can filter based on the component's name, author, or type.
-      if (!searchTerm) return UserStore.getState().components
+      if (!searchTerm) return UserStore.getState().components;
       return (
         component.author?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         component.type?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         component.source?.toLowerCase().includes(searchTerm.toLowerCase())
-
       );
     });
 
@@ -71,15 +90,16 @@ const UserStore = create<UserState>((set, get) => ({
 }));
 async function fetchAndInitializeComponents() {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/components`);
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/components`
+    );
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error("Network response was not ok");
     }
     const data = await response.json();
     // Set the components data in the UserStore
     UserStore.getState().setComponents(data);
-  } catch (error) {
-  }
+  } catch (error) {}
 }
 
 // Call the fetchAndInitializeComponents function to fetch and set components data

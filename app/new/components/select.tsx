@@ -10,10 +10,17 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { TYPES } from "@/data/navigation";
+import UserStore from "@/store/user";
 
 export function SelectType() {
+  const updateType = UserStore((state) => state.updateType);
+
+  const handleTypeChange = (selectedType:string) => {
+    updateType(selectedType);
+  };
+
   return (
-    <Select>
+    <Select onValueChange={handleTypeChange}>
       <SelectTrigger className="w-[200px]">
         <SelectValue placeholder="Type" />
       </SelectTrigger>
