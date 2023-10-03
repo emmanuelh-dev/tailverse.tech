@@ -1,6 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/Theme/ThemeProvider";
+import { Toaster } from "react-hot-toast";
+
 import { ModeToggle } from "@/components/Theme/Toggle";
 import Header from "@/components/Header/Header";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
@@ -26,6 +28,8 @@ export default function RootLayout({
             <Header />
             {children}
             <Footer/>
+            <Toaster />
+
           </ThemeProvider>
         </ReCaptchaProvider>
       </body>

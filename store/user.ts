@@ -3,7 +3,7 @@ import { NewComponent, Components } from "@/types";
 
 interface UserState {
   user: string;
-  token: string | null;
+  token: string;
   newComponent: NewComponent;
   filteredComponents: Components[];
   components: Components[];
@@ -23,12 +23,12 @@ interface UserState {
 const UserStore = create<UserState>((set, get) => ({
   filteredComponents: [],
   user: "",
-  token: null,
+  token: "",
   components: [], // Corrected array initialization
   newComponent: {
     name: "",
     author: "",
-    source: "<div>Hola mundo</div>",
+    source: "<div>Hello Wrold</div>",
     type: "",
     rate: 0,
   },
