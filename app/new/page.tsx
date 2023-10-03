@@ -8,10 +8,12 @@ import ComponentName from "./components/componentname";
 import { Input } from "@/components/ui/input";
 import UserStore from "@/store/user";
 import PlayGround from "@/components/PlayGround/Playground";
+import useNewComponent from "@/hooks/useNewComponent";
 
 
-const page = () => {
+const Page = () => {
   const newComponent = UserStore(state => state.newComponent)
+  const [createComponent] = useNewComponent();
   const {author} = newComponent
   return (
     <div className="px-8">
@@ -22,7 +24,7 @@ const page = () => {
             <Input value={author ? author : "Login to save your component"} disabled className="max-w-xs"/>
             <ComponentName />
             <SelectType />
-            <Button variant={"secondary"}>Save</Button>
+            <Button variant={"secondary"} onClick={()=>createComponent()}>Save</Button>
             <Button variant={"secondary"}>...</Button>
           </nav>
         </header>
@@ -32,4 +34,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
