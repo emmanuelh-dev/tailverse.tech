@@ -73,7 +73,7 @@ const Footer = () => {
               <div className="flex justify-center md:order-2 space-x-6 text-sm"></div>
               <div className="w-full items-center  max-w-7xl mx-auto px-4">
                 <div className="md:flex md:items-center md:justify-between">
-                  <div className="flex justify-center md:order-2 space-x-6">
+                  <div className="flex justify-center md:order-2 space-x-6 flex-wrap">
                     <Link
                       className="dark:text-white text-sm hover:dark:text-white/70 duration-500 ease-in-out p-3 transform transition"
                       href="https://www.linkedin.com/in/emmanuelhdev/"
