@@ -86,6 +86,12 @@ const Footer = () => {
                     >
                       @juanpablohurtado
                     </Link>
+                    <Link
+                      className="dark:text-white text-sm hover:dark:text-white/70 duration-500 ease-in-out p-3 transform transition"
+                      href="https://www.linkedin.com/in/gustavo-yasser-camarillo-rosas-3b1a95208"
+                    >
+                      @yassercr
+                    </Link>
                   </div>
                   <div className="mt-8 md:mt-0 md:order-1">
                     <p className="text-center">
