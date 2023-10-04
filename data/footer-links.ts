@@ -36,6 +36,13 @@ const footerLinks = [
       { title: "LinkedIn", href: "https://www.linkedin.com/in/juanpablohurtado/" },
     ],
   },
+  {
+    title: "Gustavo Yasser",
+    links: [
+      { title: "GitHub", href: "https://github.com/YasserCR" },
+      { title: "LinkedIn", href: "https://www.linkedin.com/in/gustavo-yasser-camarillo-rosas-3b1a95208" },
+    ],
+  },
 ];
 
 export default footerLinks;
