@@ -92,6 +92,12 @@ const Footer = () => {
                     >
                       @yassercr
                     </Link>
+                    <Link
+                      className="dark:text-white text-sm hover:dark:text-white/70 duration-500 ease-in-out p-3 transform transition"
+                      href="https://www.linkedin.com/in/octavio-guerrero-12ba6b205/"
+                    >
+                      @octavioguerrero
+                    </Link>
                   </div>
                   <div className="mt-8 md:mt-0 md:order-1">
                     <p className="text-center">
