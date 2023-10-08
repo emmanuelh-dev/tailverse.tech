@@ -1,9 +1,11 @@
 import React from "react";
 import { RiFileCopyLine } from "react-icons/ri";
-
-const CopyButton = ({ textToCopy, info, className }) => {
+import toast from "react-hot-toast";
+interface Props { textToCopy: string, info?: string, className: string }
+const CopyButton = ({ textToCopy, info, className }: Props) => {
   const handleCopyClick = () => {
     navigator.clipboard.writeText(textToCopy);
+    toast.success("Copied to clipboard")
   };
 
   return (
