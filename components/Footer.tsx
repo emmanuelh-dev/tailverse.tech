@@ -88,12 +88,6 @@ const Footer = () => {
                     </Link>
                     <Link
                       className="dark:text-white text-sm hover:dark:text-white/70 duration-500 ease-in-out p-3 transform transition"
-                      href="https://www.linkedin.com/in/gustavo-yasser-camarillo-rosas-3b1a95208"
-                    >
-                      @yassercr
-                    </Link>
-                    <Link
-                      className="dark:text-white text-sm hover:dark:text-white/70 duration-500 ease-in-out p-3 transform transition"
                       href="https://www.linkedin.com/in/octavio-guerrero-12ba6b205/"
                     >
                       @octavioguerrero
