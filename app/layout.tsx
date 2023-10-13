@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/Theme/ThemeProvider";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from '@vercel/analytics/react';
 
 import { ModeToggle } from "@/components/Theme/Toggle";
 import Header from "@/components/Header/Header";
@@ -31,6 +32,7 @@ export default function RootLayout({
             {children}
             <Footer />
             <Toaster />
+            <Analytics/>
           </ThemeProvider>
         </ReCaptchaProvider>
       </body>
