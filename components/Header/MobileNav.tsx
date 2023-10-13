@@ -2,7 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { NAVIGATION } from "@/data/navigation";
 import Searchbox from "@/app/Searchbox";
-import { DropdownMenuDemo } from "./UserMenu";
+import { buttonVariants } from "../ui/button";
 
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false);
@@ -20,7 +20,7 @@ const MobileNav = () => {
   };
 
   return (
-    <div className="sm:hidden">
+    <div className="min-[1100px]:hidden">
       <button
         type="button"
         className="ml-1 mr-1 h-8 w-8 rounded py-1"
@@ -46,7 +46,6 @@ const MobileNav = () => {
         }`}
       >
         <div className="flex justify-end items-center">
-
           <button
             type="button"
             className="mr-10 mt-9 h-8 w-8 rounded"
@@ -73,16 +72,38 @@ const MobileNav = () => {
           </div>
 
           {NAVIGATION.map((link) => (
-            <div key={link.title} className="px-12 py-4">
+            <div
+              key={link.title}
+              className="px-12 py-4 w-screen hover:bg-neutral-800/50"
+            >
               <Link
                 href={link.href}
-                className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
+                className="text-2xl font-normal tracking-widest  text-gray-900 dark:text-gray-100"
                 onClick={onToggleNav}
               >
                 {link.title}
               </Link>
+              <hr className="mt-1" />
             </div>
           ))}
+          <div className="px-12 py-4 w-screen">
+            <div className="gap-4 flex items-center justify-center">
+              <div className="gap-4 flex items-center">
+                <Link href={"/login"} onClick={onToggleNav}>
+                  Login
+                </Link>{" "}
+                <Link
+                  href={"/register"}
+                  onClick={onToggleNav}
+                  className={`text-lg font-semibold tracking-widest ${buttonVariants(
+                    { variant: "default" }
+                  )}`}
+                >
+                  Register
+                </Link>
+              </div>
+            </div>
+          </div>
         </nav>
       </div>
     </div>
