@@ -13,20 +13,20 @@ const Header = () => {
   return (
     <header>
       <nav className="flex items-center justify-between px-8 py-8">
-        <div className="flex gap-4 ">
+        <div className="flex items-center">
           <Link
             href="/"
             className="text-sm font-bold tracking-tight text-neutral-700 dark:text-neutral-300"
           >
             TAILVERSE
           </Link>
-          <div className="md:flex hidden items-center gap-8 text-xl">
+          <div className="md:flex hidden items-center text-xl">
             {NAVIGATION.map((item) => {
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm text-neutral-700 dark:text-neutral-300"
+                  className={buttonVariants({variant:"link"})}
                 >
                   {item.title}
                 </Link>

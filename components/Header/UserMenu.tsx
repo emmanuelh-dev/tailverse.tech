@@ -35,7 +35,7 @@ export function DropdownMenuDemo() {
         </DropdownMenuTrigger>
       ) : (
         <div className="gap-4 flex items-center">
-          <Link href={"/login"}>Login</Link>{" "}
+          <Link href={"/login"} className={buttonVariants({variant: "link"})}>Login</Link>{" "}
           <Link
             href={"/register"}
             className={buttonVariants({ variant: "default" })}
