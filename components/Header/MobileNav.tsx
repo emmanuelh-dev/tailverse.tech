@@ -68,23 +68,27 @@ const MobileNav = () => {
         </div>
         <nav className="fixed mt-8 h-full">
           <div className="px-12 py-4">
-            <Searchbox />
+            <Searchbox
+              closeMobileNav={() => {
+                setNavShow(false);
+                document.body.style.overflow = "auto";
+              }}
+            />
           </div>
 
           {NAVIGATION.map((link) => (
-            <div
+            <Link
               key={link.title}
-              className="px-12 py-4 w-screen hover:bg-neutral-800/50"
+              href={link.href}
+              className="text-2xl w-full font-normal tracking-widest  text-gray-900 dark:text-gray-100"
+              onClick={onToggleNav}
             >
-              <Link
-                href={link.href}
-                className="text-2xl font-normal tracking-widest  text-gray-900 dark:text-gray-100"
-                onClick={onToggleNav}
-              >
+              <div className="px-12 py-4 w-screen hover:bg-neutral-800/50">
                 {link.title}
-              </Link>
-              <hr className="mt-1" />
-            </div>
+
+                <hr className="mt-1" />
+              </div>
+            </Link>
           ))}
           <div className="px-12 py-4 w-screen">
             <div className="gap-4 flex items-center justify-center">
