@@ -46,16 +46,6 @@ const footerLinks = [
     ],
   },
   {
-    title: "Gustavo Yasser",
-    links: [
-      { title: "GitHub", href: "https://github.com/YasserCR" },
-      {
-        title: "LinkedIn",
-        href: "https://www.linkedin.com/in/gustavo-yasser-camarillo-rosas-3b1a95208",
-      },
-    ],
-  },
-  {
     title: "Octavio Guerrero",
     links: [
       { title: "GitHub", href: "https://github.com/octav20" },

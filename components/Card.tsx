@@ -31,7 +31,6 @@ const CardActions = ({
         </Link>
         <CopyButton
           textToCopy={source}
-          info={undefined}
           className="dark:text-neutral-200 "
         />
       </div>
