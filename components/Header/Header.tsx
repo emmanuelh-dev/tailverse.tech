@@ -20,7 +20,7 @@ const Header = () => {
           >
             TAILVERSE
           </Link>
-          <div className="md:flex hidden items-center gap-8 text-xl">
+          <div className="min-[1100px]:flex hidden items-center gap-8 text-xl">
             {NAVIGATION.map((item) => {
               return (
                 <Link
@@ -36,8 +36,15 @@ const Header = () => {
         </div>
 
         <MobileNav />
-        <div className="gap-3 md:flex items-center hidden">
-          <Link href="/new" className={`flex items-center gap-2 ${buttonVariants({variant: "default"})}`}>Create <Plus/></Link>
+        <div className="gap-3 min-[1100px]:flex items-center hidden">
+          <Link
+            href="/new"
+            className={`flex items-center gap-2 ${buttonVariants({
+              variant: "default",
+            })}`}
+          >
+            Create <Plus />
+          </Link>
           <Searchbox />
           <Button variant={"outline"}>
             <AiFillGithub className="text-xl" />
