@@ -6,8 +6,11 @@ import { Label } from "@radix-ui/react-dropdown-menu";
 import { AiOutlineEnter } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 
-const Searchbox = () => {
-  
+interface SearchboxProps {
+  closeMobileNav?: () => void;
+}
+
+const Searchbox: React.FC<SearchboxProps> = ({ closeMobileNav }) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const filterComponents = UserStore((state) => state.filterComponents);
   const router = useRouter();
@@ -16,6 +19,9 @@ const Searchbox = () => {
     if (e.key === "Enter") {
       router.push("/");
       filterComponents(searchTerm);
+      if (closeMobileNav) {
+        closeMobileNav();
+      }
     }
   };
 

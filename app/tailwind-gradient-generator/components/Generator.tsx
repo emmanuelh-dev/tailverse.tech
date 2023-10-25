@@ -28,7 +28,7 @@ const GradientGenerator = () => {
   return (
     <div className="  px-4">
       <div className="flex gap-10">
-        <div className="w-full flex gap-10 max-sm:flex-wrap">
+        <div className="w-full flex gap-10 justify-center max-sm:flex-wrap">
           <div className=" lg:w-2/5 mt-10">
             <div className={` h-72 w-full rounded-lg ${Class}`}></div>
             <div className="text-5xl font-extrabold flex items-center justify-center h-72 ">
