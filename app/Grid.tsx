@@ -4,6 +4,7 @@ import CardComponent from "@/components/Card";
 import SuspenceCard from "@/components/Cards/Suspence";
 import UserStore from "@/store/user";
 import { Components } from "@/types";
+import FilterBox from "./FilterBox";
 
 const RenderedGrid = ({ components }: { components: Components[] }) => {
   return (
@@ -24,7 +25,6 @@ const Grid = () => {
   }, []);
   return (
     <>
-      
       {filterComponents.length > 1 ? (
         <div className="md:columns-2 lg:columns-3 xl:col-span-4 2xl:columns-5 gap-8 px-8">
           {showComponents ? (

@@ -1,6 +1,7 @@
 import { AiOutlineEnter } from "react-icons/ai";
 import Grid from "./Grid";
 import Searchbox from "./Searchbox";
+import FilterBox from "./FilterBox";
 
 export default function Page() {
   return (
@@ -12,11 +13,12 @@ export default function Page() {
           </label>
           <div className="flex items-center space-x-2 max-w-md mx-auto">
             <Searchbox />
-
             <AiOutlineEnter className="text-blue-500 text-xl" />
           </div>
+
         </div>
       </div>
+      <FilterBox/>
       <Grid />
     </>
   );
