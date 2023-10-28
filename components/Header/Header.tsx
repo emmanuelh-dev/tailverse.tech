@@ -9,6 +9,7 @@ import MobileNav from "./MobileNav";
 import { NAVIGATION } from "@/data/navigation";
 import Searchbox from "@/app/Searchbox";
 import { Plus } from "lucide-react";
+import { Notifications } from "./Nofications";
 const Header = () => {
   return (
     <header>
@@ -46,6 +47,7 @@ const Header = () => {
             Create <Plus />
           </Link>
           <Searchbox />
+          <Notifications/>
           <Button variant={"outline"}>
             <AiFillGithub className="text-xl" />
           </Button>
