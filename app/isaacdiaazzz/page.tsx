@@ -8,7 +8,6 @@ import {
   FaUserSecret,
 } from "react-icons/fa";
 import Enlace from "@/components/Enlaces";
-
 const enlaces = [
   {
     color: "rose",
@@ -41,7 +40,6 @@ const enlaces = [
     icono: FaFacebook,
   },
 ];
-
 const IsaacDiaz = () => {
   return (
     <div className="">
@@ -61,5 +59,4 @@ const IsaacDiaz = () => {
     </div>
   );
 };
-
 export default IsaacDiaz;
