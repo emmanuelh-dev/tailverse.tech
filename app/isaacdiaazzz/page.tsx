@@ -10,6 +10,12 @@ import {
 import Enlace from "@/components/Enlaces";
 const enlaces = [
   {
+    color: "blue",
+    link: "https://twitter.com/isaacdiaazzz/",
+    texto: "Twitter",
+    icono: FaTwitter,
+  },
+  {
     color: "rose",
     link: "https://www.instagram.com/isaacdiaazzz/",
     texto: "Instagram",
