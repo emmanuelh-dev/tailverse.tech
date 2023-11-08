@@ -10,10 +10,16 @@ import { NAVIGATION } from "@/data/navigation";
 import Searchbox from "@/app/Searchbox";
 import { Plus } from "lucide-react";
 import { Notifications } from "./Nofications";
+import { UserMenuMobile } from "./UserMenuMobile";
+import UserStore from "@/store/user";
 const Header = () => {
+  const user = UserStore((state) => state.user);
+  const logOut = UserStore((state) => state.logOut);
   return (
     <header>
-      <nav className="flex items-center justify-between px-8 py-8">
+      <nav className="flex items-center justify-between px-4 py-4">
+        <MobileNav />
+
         <div className="flex items-center">
           <Link
             href="/"
@@ -35,8 +41,13 @@ const Header = () => {
             })}
           </div>
         </div>
+        {user ? (
+          <div className="max-[1100px]:flex gap-2 hidden">
+            <Notifications />
 
-        <MobileNav />
+            <UserMenuMobile />
+          </div>
+        ) : null}
         <div className="gap-3 min-[1100px]:flex items-center hidden">
           <Link
             href="/new"
@@ -47,7 +58,7 @@ const Header = () => {
             Create <Plus />
           </Link>
           <Searchbox />
-          <Notifications/>
+          <Notifications />
           <Button variant={"outline"}>
             <AiFillGithub className="text-xl" />
           </Button>

@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/Theme/ThemeProvider";
 import { Toaster } from "react-hot-toast";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 import { ModeToggle } from "@/components/Theme/Toggle";
 import Header from "@/components/Header/Header";
@@ -11,10 +11,12 @@ import Script from "next/script";
 import Footer from "@/components/Footer";
 import { Figtree } from "next/font/google";
 export const metadata: Metadata = {
-    title: "Tailverse: Explore premium Tailwind CSS components, shaping the future of design effortlessly",
-    description: "Tailverse: Explore premium Tailwind CSS components, shaping the future of design effortlessly",
+  title:
+    "Tailverse: Explore premium Tailwind CSS components, shaping the future of design effortlessly",
+  description:
+    "Tailverse: Explore premium Tailwind CSS components, shaping the future of design effortlessly",
 };
-const font = Figtree({ subsets: ["latin"] });
+const font = Figtree({ subsets: ["latin"], weight: ["300", "400", "500"] });
 export default function RootLayout({
   children,
 }: {
@@ -33,7 +35,7 @@ export default function RootLayout({
             {children}
             <Footer />
             <Toaster />
-            <Analytics/>
+            <Analytics />
           </ThemeProvider>
         </ReCaptchaProvider>
       </body>
