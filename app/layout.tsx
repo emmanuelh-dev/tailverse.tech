@@ -28,6 +28,7 @@ export default function RootLayout({
         >
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
             <Script src="https://cdn.tailwindcss.com" />
+            <Script src="https://unpkg.com/alpinejs" />
             <Header />
             {children}
             <Footer />

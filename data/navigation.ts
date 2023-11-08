@@ -3,6 +3,7 @@ export const TYPES = [
   { href: "inputs", title: "Inputs" },
   { href: "cards", title: "Cards" },
   { href: "forms", title: "Forms" },
+  { href: "alpinejs", title: "Alpine JS" },
 ];
 export const NAVIGATION = [
   ...TYPES,
