@@ -28,7 +28,7 @@ export function SelectType() {
         <SelectGroup>
           <SelectLabel>Components</SelectLabel>
           {TYPES.map((type, index) => (
-            <SelectItem value={type.title.toLowerCase()} key={index}>
+            <SelectItem value={type.href} key={index}>
               {type.title}
             </SelectItem>
           ))}

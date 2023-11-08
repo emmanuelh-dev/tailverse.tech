@@ -40,8 +40,8 @@ const CardActions = ({
       <div className="flex items-center justify-between w-full">
         <LikeButton id={id} rate={rate} />
         <Link
-          href={`/${type.toLowerCase()}`}
-          className="dark:text-neutral-200 px-4 py-2 mr-2"
+href={`/${type.toLowerCase()}`.replace(/\s/g, '')}
+className="dark:text-neutral-200 px-4 py-2 mr-2"
           rel="noopener noreferrer"
         >
           {type.toLowerCase()}
