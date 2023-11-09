@@ -29,6 +29,8 @@ export interface Component {
   author: string;
   type: string;
   rate: number;
+  name: string;
+
   children?: React.ReactNode;
 }
 export interface Components extends Component {

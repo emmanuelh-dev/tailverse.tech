@@ -26,7 +26,7 @@ const Grid = () => {
   return (
     <>
       {filterComponents.length > 1 ? (
-        <div className="md:columns-2 lg:columns-3 xl:col-span-4 2xl:columns-5 gap-8 px-8">
+        <div className="md:columns-2 lg:columns-3 xl:col-span-4 2xl:columns-5 gap-12 px-8">
           {showComponents ? (
             <RenderedGrid components={filterComponents} />
           ) : (

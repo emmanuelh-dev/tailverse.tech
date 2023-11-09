@@ -18,9 +18,10 @@ const CardActions = ({
   source,
   type,
   children,
+  name
 }: Components) => {
   return (
-    <div className="flex w-full flex-col min-h-[18rem] justify-center items-center  overflow-y-auto ">
+    <div className="flex w-full flex-col min-h-[18rem] justify-center items-center  overflow-y-auto pb-10">
       <div className="w-full justify-between flex py-1">
         <Link
           href={`/profile/${author}`}
@@ -29,19 +30,17 @@ const CardActions = ({
         >
           {author}
         </Link>
-        <CopyButton
-          textToCopy={source}
-          className="dark:text-neutral-200 "
-        />
+        <CopyButton textToCopy={source} className="dark:text-neutral-200 " />
       </div>
       <div className="shadow-md rounded-xl border-neutral-300 border dark:border-neutral-700 w-full h-full flex flex-1 items-center justify-center overflow-x-hidden">
         {children}
       </div>
+      <h3 className="text-left font-bold w-full pt-2">{name}</h3>
       <div className="flex items-center justify-between w-full">
         <LikeButton id={id} rate={rate} />
         <Link
-href={`/${type.toLowerCase()}`.replace(/\s/g, '')}
-className="dark:text-neutral-200 px-4 py-2 mr-2"
+          href={`/${type.toLowerCase()}`.replace(/\s/g, "")}
+          className="dark:text-neutral-200 px-4 py-2 mr-2"
           rel="noopener noreferrer"
         >
           {type.toLowerCase()}
@@ -58,9 +57,9 @@ className="dark:text-neutral-200 px-4 py-2 mr-2"
 };
 
 const CardComponent = ({ component }: Props) => {
-  const { source, author, type, rate, id } = component;
+  const { source, author, type, rate, id, name } = component;
   const newSource = ValidationCard(source);
-
+  console.log(component)
   return (
     <CardActions
       source={source}
@@ -68,6 +67,7 @@ const CardComponent = ({ component }: Props) => {
       type={type}
       rate={rate}
       id={id}
+      name={name}
     >
       <div className="source" dangerouslySetInnerHTML={{ __html: newSource }} />
     </CardActions>
