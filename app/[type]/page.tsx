@@ -16,17 +16,29 @@ export default async function Page({
     }),
   };
 
-  async function getComponentsByType() {
+  async function fetchComponentsByType() {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/components/getByType`,
       requestOptions
     );
-    const data =  await res.json();
-    return data
+    const data = await res.json();
+    return data;
   }
 
-  // Llama a la función asincrónica para obtener los componentes
-  const components = await getComponentsByType();
+  async function fetchTry() {
+    const response = await fetch("https://tailverse.me/components/getByType", requestOptions);
+    try {
+      const result = await response.text();
+      console.log(result);
+    } catch (error) {
+      console.log("error", error);
+    }
+  }
+
+  // Llama a las funciones asincrónicas para obtener los componentes
+  const components = await fetchComponentsByType();
+  console.log(components);
+  console.log(fetchTry())
   return (
     <div>
       <Grid components={components} />

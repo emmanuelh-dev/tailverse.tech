@@ -9,7 +9,6 @@ const useNewComponent = () => {
   function createComponent() {
     const { name, author, source, type } = newComponent;
     if (!name || !author || !source || !type) {
-      console.log("name and author cannot be empty");
       return;
     }
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/components`, {
@@ -33,7 +32,6 @@ const useNewComponent = () => {
   }
 
   useEffect(() => {
-    console.log(newComponent);
   }, [newComponent]);
 
   return [createComponent];

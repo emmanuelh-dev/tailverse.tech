@@ -63,7 +63,6 @@ const UserStore = create<UserState>((set, get) => ({
   updateRate: (rate) =>
     set((state) => ({ newComponent: { ...state.newComponent, rate } })),
   updateName: (name) => {
-    console.log(name);
     set((state) => ({ newComponent: { ...state.newComponent, name } }));
   },
   logOut: () => {
