@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import useLogin from "@/hooks/useLogin";
 import { useRouter } from 'next/navigation'
 import { useReCaptcha } from "next-recaptcha-v3";
+import { historyBackOrHome } from "@/utils/helpers";
 
 const LogIn = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -17,10 +18,8 @@ const LogIn = () => {
   const handleFormSubmit = async (values: { email: string; password: string }) => {
     const token = await executeRecaptcha("onSubmit");
     if (token){
-
     await logIn(values)
-    router.push('/');
-
+    historyBackOrHome()
     }
   };
   const handleCheckbox = () => {

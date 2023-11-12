@@ -12,9 +12,9 @@ import Footer from "@/components/Footer";
 import { Figtree } from "next/font/google";
 export const metadata: Metadata = {
   title:
-    "Tailverse: Explore premium Tailwind CSS components, shaping the future of design effortlessly",
+    "Tailverse: Tailwind CSS, Alpinejs components, shaping the future of design effortlessly",
   description:
-    "Tailverse: Explore premium Tailwind CSS components, shaping the future of design effortlessly",
+    "Tailverse: Tailwind CSS, Alpinejs components, shaping the future of design effortlessly",
 };
 const font = Figtree({ subsets: ["latin"], weight: ["300", "400", "500"] });
 export default function RootLayout({

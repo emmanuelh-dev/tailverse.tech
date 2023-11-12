@@ -54,6 +54,6 @@ export const loginUser = async ({
   if (response.ok) {
     return await response.json();
       } else {
-    return "An error occurred";
+    return "Email or password is incorrect";
   }
 };
