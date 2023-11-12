@@ -39,6 +39,7 @@ const footerLinks = [
   {
     title: "Juan Pablo",
     links: [
+      { title: "GitHub", href: "https://github.com/juanpablohurtadonuvan" },
       {
         title: "LinkedIn",
         href: "https://www.linkedin.com/in/juanpablohurtado/",
