@@ -1,3 +1,4 @@
+import { title } from "process";
 import { NAVIGATION } from "./navigation";
 
 const footerLinks = [
@@ -10,7 +11,7 @@ const footerLinks = [
   },
   {
     title: "Site Map",
-    links: [...NAVIGATION],
+    links: [{title: "Home", href: "/"}, {title: "About Us", href: "/about"} ,...NAVIGATION, ],
   },
   {
     title: "Our projects",

@@ -16,7 +16,7 @@ const Header = () => {
   const user = UserStore((state) => state.user);
   const logOut = UserStore((state) => state.logOut);
   return (
-    <header>
+    <header className=" relative z-[100]">
       <nav className="flex items-center justify-between px-4 py-4">
         <MobileNav />
 

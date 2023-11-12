@@ -1,5 +1,4 @@
 import Grid from "@/components/Grid";
-import { Component } from "lucide-react";
 
 export default async function Page({
   params,
@@ -29,16 +28,12 @@ export default async function Page({
     const response = await fetch("https://tailverse.me/components/getByType", requestOptions);
     try {
       const result = await response.text();
-      console.log(result);
     } catch (error) {
       console.log("error", error);
     }
   }
-
-  // Llama a las funciones asincrónicas para obtener los componentes
   const components = await fetchComponentsByType();
   console.log(components);
-  console.log(fetchTry())
   return (
     <div>
       <Grid components={components} />
