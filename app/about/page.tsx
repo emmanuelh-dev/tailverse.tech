@@ -525,7 +525,6 @@ const WelcomePage = () => {
                   role="tab"
                   type="button"
                   aria-selected="true"
-                  tabindex="0"
                   data-headlessui-state="selected"
                   aria-controls="headlessui-tabs-panel-4"
                 >
@@ -594,7 +593,6 @@ const WelcomePage = () => {
           <div
             id="headlessui-tabs-panel-4"
             role="tabpanel"
-            tabindex="0"
             data-headlessui-state="selected"
             aria-labelledby="headlessui-tabs-tab-1"
           >
