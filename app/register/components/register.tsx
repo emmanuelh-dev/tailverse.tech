@@ -44,6 +44,8 @@ const Register = () => {
         const errors: any = {};
         if (!values.username) {
           errors.username = "Username must not be empty";
+        }else if (!/^[a-zA-Z0-9_-]+$/.test(values.username)) {
+          errors.username = "Username can only contain letters, numbers, underscores, and hyphens";
         }
         if (!values.email) {
           errors.email = "Email is required";
