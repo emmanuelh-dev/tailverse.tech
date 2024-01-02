@@ -14,6 +14,6 @@ export function historyBackOrHome() {
     }
   } else {
     // Si no hay página anterior en el historial, redirige al inicio de tu aplicación
-    window.history.back();
+    window.location.href = "/";
   }
 }

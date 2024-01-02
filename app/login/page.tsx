@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import Form from "./components/form";
 
 export const metadata: Metadata = {
-  title: "Authentication",
-  description: "Authentication forms built using the components.",
+  title: "Tailverse Login Page",
+  description: "Login to save your components and get access to your dashboard.",
 };
 
 
