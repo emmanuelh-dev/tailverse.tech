@@ -29,6 +29,20 @@ export default function RootLayout({
           reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
         >
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=G-5D2017M1TM"`}
+            />
+
+            <Script>
+              {`
+               window.dataLayer = window.dataLayer || [];
+               function gtag(){dataLayer.push(arguments);}
+               gtag('js', new Date());
+
+               gtag('config', 'G-5D2017M1TM');
+              `}
+            </Script>
+
             <Script src="https://cdn.tailwindcss.com" />
             <Script src="https://unpkg.com/alpinejs" />
             <Header />
