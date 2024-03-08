@@ -17,6 +17,7 @@ const LogIn = () => {
   const handleFormSubmit = async (values: { email: string; password: string }) => {
     const token = await executeRecaptcha("onSubmit");
     if (token){
+      console.log(token)
     await logIn(values)
     router.push('/')
     }

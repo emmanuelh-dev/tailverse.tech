@@ -29,11 +29,10 @@ export default async function Page({
     try {
       const result = await response.text();
     } catch (error) {
-      console.log("error", error);
+      console.error("error", error);
     }
   }
   const components = await fetchComponentsByType();
-  console.log(components);
   return (
     <div>
       <Grid components={components} />

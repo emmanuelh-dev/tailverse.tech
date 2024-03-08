@@ -59,7 +59,6 @@ const CardActions = ({
 const CardComponent = ({ component }: Props) => {
   const { source, author, type, rate, id, name } = component;
   const newSource = ValidationCard(source);
-  console.log(component)
   return (
     <CardActions
       source={source}
