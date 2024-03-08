@@ -10,8 +10,9 @@ function useLogin() {
       const { token, user } = data;
       setInitialData(user.username, token);
       updateAuthor(user.username)
-
+      return true;
     } catch {
+      return false;
     }
   };
 
